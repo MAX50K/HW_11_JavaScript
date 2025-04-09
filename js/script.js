@@ -32,40 +32,34 @@ if (confirm("Do you want to deposit money?")) {
     }
 }
 // 2
-
 let temp = parseFloat(prompt("Enter the temperature in celcium:"));
 
-const weather = {
-    tempCelc: temp,
-    humidity: 62,
-    windSpeedMph: 4.8,
+let weather = {
+  temperature: temp,
+  humidity: 60,
+  windSpeed: 15,
 
-    checkTemp(temp) {
-        if (temp => 0){
-             return false
-        } else {
-            return true
-        }
-    }
-}
+  isUnderZero() {
+    return this.temperature < 0;
+  }
+};
 
-
-if (weather.checkTemp()) {
+if (weather.isUnderZero()) {
     alert("The temperature is under 0 celcium");
   } else {
     alert("The temperature is above or 0 celcium");
   }
 // 3
 
-const enterEmail = prompt("Enter the password:")
+const enterPassword = prompt("Enter the password:")
 
 const user = {
     name: "Max",
     email: "skibidi69@gmail.com",
     password: "gyayatMewing21",
 
-    login(enterEmail) {
-        if (enterEmail == this.password) {
+    login() {
+        if (enterPassword == this.password) {
             console.log(`Welcome back, ${this.name}`);
         } else {
             console.log("Wrong password");
@@ -73,4 +67,21 @@ const user = {
     }
 }
 
-console.log(login);
+console.log(user.login());
+// 4
+const movie = {
+  title: "Dingo",
+  director: "Johny Alan",
+  year: 2019,
+  rating: 8.7,
+
+  isAboveEight() {
+    return this.rating > 8
+  }
+}
+
+if (movie.isAboveEight()) {
+  alert("The rating is above 8");
+} else {
+  alert("The tating is under 8");
+}
